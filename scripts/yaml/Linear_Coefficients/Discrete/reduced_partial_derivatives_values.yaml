@@ -1,0 +1,115 @@
+pitch: {pitch: 1, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+pitchd: {pitch: 0, pitchd: 1, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+pitchdd: {pitch: -yawd*(-0.000584176380030817*yawd*cos(2*pitch) + 0.000292088190015409*yawd*cos(2*pitch
+    - 2*roll) + 0.000292088190015409*yawd*cos(2*pitch + 2*roll) + 1.3125*cos(pitch
+    - 2*roll) - 1.3125*cos(pitch + 2*roll)) - (5.46066384540866*ux*sin(pitch) + 5.46066384540866*uz*cos(pitch)
+    - 5.46066384540866*xd*sin(pitch)*cos(yaw) + 1.78514944957863*yawd**2*sin(pitch)**2*cos(roll)
+    - 0.892574724789315*yawd**2*cos(roll) - 5.46066384540866*yd*sin(pitch)*sin(yaw)
+    - 5.46066384540866*zd*cos(pitch) + 10.5*cos(pitch))*cos(roll), pitchd: -0.222851593007313*yawd*cos(pitch
+    - 2*roll) + 0.222851593007313*yawd*cos(pitch + 2*roll) + 2.625*cos(2*roll) - 2.625,
+  pitchdd: '0', roll: -5.25*uwz*cos(roll) - 5.46066384540866*ux*sin(roll)*cos(pitch)
+    + 5.46066384540866*uz*sin(pitch)*sin(roll) + 5.46066384540866*xd*sin(roll)*cos(pitch)*cos(yaw)
+    - 1.78281274405851*yawd**2*sin(pitch)*sin(roll)*cos(pitch)*cos(roll) - 10.5*yawd*sin(roll)**2*cos(pitch)
+    + 5.25*yawd*cos(pitch) + 5.46066384540866*yd*sin(roll)*sin(yaw)*cos(pitch) - 5.46066384540866*zd*sin(pitch)*sin(roll)
+    + 10.5*sin(pitch)*sin(roll), rolld: yawd*(0.891406372029254*sin(roll)**2 - 1.89257472478932)*cos(pitch),
+  rolldd: '0', uwz: -5.25*sin(roll), ux: 5.46066384540866*cos(pitch)*cos(roll), uy: '0',
+  uz: -5.46066384540866*sin(pitch)*cos(roll), x: '0', xd: -5.46066384540866*cos(pitch)*cos(roll)*cos(yaw),
+  xdd: '0', y: '0', yaw: 5.46066384540866*(xd*sin(yaw) - yd*cos(yaw))*cos(pitch)*cos(roll),
+  yawd: 0.446871538774689*yawd*sin(2*pitch) + 0.222851593007313*yawd*sin(2*pitch -
+    2*roll) + 0.222851593007313*yawd*sin(2*pitch + 2*roll) - 1.3125*sin(pitch - 2*roll)
+    + 1.3125*sin(pitch + 2*roll), yawdd: '0', yd: -5.46066384540866*sin(yaw)*cos(pitch)*cos(roll),
+  ydd: '0', z: '0', zd: 5.46066384540866*sin(pitch)*cos(roll), zdd: '0'}
+roll: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 1, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+rolld: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 1, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+rolldd: {pitch: 5.25*uwz*cos(roll)/cos(pitch)**2 + 1.16573417585641e-15*ux*sin(roll)*cos(pitch)
+    - 1.16573417585641e-15*uz*sin(pitch)*sin(roll) - 5.46066384540866*uz*sin(pitch)*sin(roll)/cos(pitch)**2
+    - 1.16573417585641e-15*xd*sin(roll)*cos(pitch)*cos(yaw) - 0.00186113313112429*yawd**2*sin(pitch)*sin(roll)*cos(pitch)*cos(roll)
+    + 5.25*yawd*sin(roll)**2*cos(pitch) - 5.25*yawd*cos(pitch) - 1.16573417585641e-15*yd*sin(roll)*sin(yaw)*cos(pitch)
+    + 1.16573417585641e-15*zd*sin(pitch)*sin(roll) + 5.46066384540866*zd*sin(pitch)*sin(roll)/cos(pitch)**2
+    - 10.5*sin(pitch)*sin(roll)/cos(pitch)**2, pitchd: -0.893267505160378*yawd*sin(roll)**2*cos(pitch)
+    - 0.891406372029254*yawd*sin(roll)**2/cos(pitch) + 0.893505291354877*yawd*cos(pitch)
+    + 0.998831647239938*yawd/cos(pitch) + 5.25*sin(roll)*cos(roll)*tan(pitch), pitchdd: '0',
+  roll: -5.25*uwz*sin(roll)*tan(pitch) + 1.16573417585641e-15*ux*sin(pitch)*cos(roll)
+    + 5.46066384540866*uy*sin(roll) + 1.16573417585641e-15*uz*cos(pitch)*cos(roll)
+    - 5.46066384540866*uz*cos(roll)/cos(pitch) - 8.88178419700125e-16*xd*sin(pitch)*cos(roll)*cos(yaw)
+    + 5.46066384540866*xd*sin(roll)*sin(yaw) + 0.00186113313112429*yawd**2*sin(pitch)**2*sin(roll)**2
+    - 0.000930566565562146*yawd**2*sin(pitch)**2 - 1.78467387718963*yawd**2*sin(roll)**2
+    + 0.892336938594816*yawd**2 + 10.5*yawd*sin(pitch)*sin(roll)*cos(roll) - 8.88178419700125e-16*yd*sin(pitch)*sin(yaw)*cos(roll)
+    - 5.46066384540866*yd*sin(roll)*cos(yaw) - 1.16573417585641e-15*zd*cos(pitch)*cos(roll)
+    + 5.46066384540866*zd*cos(roll)/cos(pitch) - 10.5*cos(roll)/cos(pitch), rolld: -0.222851593007313*yawd*(cos(pitch
+    - 2*roll) - cos(pitch + 2*roll)), rolldd: '0', uwz: 5.25*cos(roll)*tan(pitch),
+  ux: '0', uy: -5.46066384540866*cos(roll), uz: -5.46066384540866*sin(roll)/cos(pitch),
+  x: '0', xd: -5.46066384540866*sin(yaw)*cos(roll), xdd: '0', y: '0', yaw: -5.46066384540866*(xd*cos(yaw)
+    + yd*sin(yaw))*cos(roll), yawd: (0.001861133131124*yawd*sin(roll)*cos(pitch)**2
+    + 1.78281274405851*yawd*sin(roll) - 5.25*sin(pitch)*cos(roll))*cos(roll), yawdd: '0',
+  yd: 5.46066384540866*cos(roll)*cos(yaw), ydd: '0', z: '0', zd: 5.46066384540866*sin(roll)/cos(pitch),
+  zdd: '0'}
+x: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 1, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+xd: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 1, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+xdd: {pitch: (5.1*(uz - zd)*(sin(pitch)*cos(roll)*cos(yaw) + sin(roll)*sin(yaw))*sin(pitch)
+    + (5.1*uz - 5.1*zd + 9.8065*cos(pitch)*cos(roll))*cos(pitch)**2*cos(roll)*cos(yaw))/(cos(pitch)**2*cos(roll)),
+  pitchd: '0', pitchdd: '0', roll: 5.1*uz*sin(yaw)/(cos(pitch)*cos(roll)**2) - 5.1*zd*sin(yaw)/(cos(pitch)*cos(roll)**2)
+    - 9.8065*sin(pitch)*sin(roll)*cos(yaw) + 9.8065*sin(yaw)*cos(roll), rolld: '0',
+  rolldd: '0', uwz: '0', ux: '0', uy: '0', uz: 5.1*sin(yaw)*tan(roll)/cos(pitch) +
+    5.1*cos(yaw)*tan(pitch), x: '0', xd: '0', xdd: '0', y: '0', yaw: -(sin(pitch)*sin(yaw)*cos(roll)
+    - sin(roll)*cos(yaw))*(5.1*uz - 5.1*zd + 9.8065*cos(pitch)*cos(roll))/(cos(pitch)*cos(roll)),
+  yawd: '0', yawdd: '0', yd: '0', ydd: '0', z: '0', zd: -5.1*sin(yaw)*tan(roll)/cos(pitch)
+    - 5.1*cos(yaw)*tan(pitch), zdd: '0'}
+y: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 1, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+yaw: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 1, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+yawd: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 1, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+yawdd: {pitch: 1.0*(2.625*uwz*sin(pitch - roll) + 2.625*uwz*sin(pitch + roll) - 5.46066384540866*uz*sin(roll)
+    - 0.167138694755485*yawd**2*sin(pitch - 2*roll) + 0.167138694755485*yawd**2*sin(pitch
+    + 2*roll) - 0.0557128982518284*yawd**2*sin(3*pitch - 2*roll) + 0.0557128982518284*yawd**2*sin(3*pitch
+    + 2*roll) + 5.46066384540866*zd*sin(roll) - 10.5*sin(roll))/cos(pitch)**2, pitchd: -0.891406372029254*yawd*sin(roll)**2*tan(pitch)
+    + 0.998831647239938*yawd*tan(pitch) + 5.25*sin(roll)*cos(roll)/cos(pitch), pitchdd: '0',
+  roll: -5.25*uwz*sin(roll)/cos(pitch) + 5.46066384540866*ux*cos(roll) - 5.46066384540866*uz*cos(roll)*tan(pitch)
+    - 5.46066384540866*xd*cos(roll)*cos(yaw) - 1.78281274405851*yawd**2*sin(pitch)*sin(roll)**2
+    + 0.891406372029254*yawd**2*sin(pitch) + 10.5*yawd*sin(roll)*cos(roll) - 5.46066384540866*yd*sin(yaw)*cos(roll)
+    + 5.46066384540866*zd*cos(roll)*tan(pitch) - 10.5*cos(roll)*tan(pitch), rolld: -0.445703186014627*yawd*sin(2*roll),
+  rolldd: '0', uwz: 5.25*cos(roll)/cos(pitch), ux: 5.46066384540866*sin(roll), uy: '0',
+  uz: -5.46066384540866*sin(roll)*tan(pitch), x: '0', xd: -5.46066384540866*sin(roll)*cos(yaw),
+  xdd: '0', y: '0', yaw: 5.46066384540866*(xd*sin(yaw) - yd*cos(yaw))*sin(roll), yawd: 0.445703186014627*yawd*cos(pitch
+    - 2*roll) - 0.445703186014627*yawd*cos(pitch + 2*roll) - 2.625*cos(2*roll) - 2.625,
+  yawdd: '0', yd: -5.46066384540866*sin(roll)*sin(yaw), ydd: '0', z: '0', zd: 5.46066384540866*sin(roll)*tan(pitch),
+  zdd: '0'}
+yd: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 1, ydd: 0,
+  z: 0, zd: 0, zdd: 0}
+ydd: {pitch: (5.1*(uz - zd)*(sin(pitch)*sin(yaw)*cos(roll) - sin(roll)*cos(yaw))*sin(pitch)
+    + (5.1*uz - 5.1*zd + 9.8065*cos(pitch)*cos(roll))*sin(yaw)*cos(pitch)**2*cos(roll))/(cos(pitch)**2*cos(roll)),
+  pitchd: '0', pitchdd: '0', roll: -5.1*uz*cos(yaw)/(cos(pitch)*cos(roll)**2) + 5.1*zd*cos(yaw)/(cos(pitch)*cos(roll)**2)
+    - 9.8065*sin(pitch)*sin(roll)*sin(yaw) - 9.8065*cos(roll)*cos(yaw), rolld: '0',
+  rolldd: '0', uwz: '0', ux: '0', uy: '0', uz: 5.1*sin(yaw)*tan(pitch) - 5.1*cos(yaw)*tan(roll)/cos(pitch),
+  x: '0', xd: '0', xdd: '0', y: '0', yaw: (sin(pitch)*cos(roll)*cos(yaw) + sin(roll)*sin(yaw))*(5.1*uz
+    - 5.1*zd + 9.8065*cos(pitch)*cos(roll))/(cos(pitch)*cos(roll)), yawd: '0', yawdd: '0',
+  yd: '0', ydd: '0', z: '0', zd: -5.1*sin(yaw)*tan(pitch) + 5.1*cos(yaw)*tan(roll)/cos(pitch),
+  zdd: '0'}
+z: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 1, zd: 0, zdd: 0}
+zd: {pitch: 0, pitchd: 0, pitchdd: 0, roll: 0, rolld: 0, rolldd: 0, uwz: 0, ux: 0,
+  uy: 0, uz: 0, x: 0, xd: 0, xdd: 0, y: 0, yaw: 0, yawd: 0, yawdd: 0, yd: 0, ydd: 0,
+  z: 0, zd: 1, zdd: 0}
+zdd: {pitch: -9.8065*sin(pitch)*cos(roll), pitchd: '0', pitchdd: '0', roll: -9.8065*sin(roll)*cos(pitch),
+  rolld: '0', rolldd: '0', uwz: '0', ux: '0', uy: '0', uz: '5.10000000000000', x: '0',
+  xd: '0', xdd: '0', y: '0', yaw: '0', yawd: '0', yawdd: '0', yd: '0', ydd: '0', z: '0',
+  zd: '-5.10000000000000', zdd: '0'}

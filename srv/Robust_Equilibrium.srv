@@ -1,0 +1,16 @@
+float64 target_x
+float64 d_xq
+float64 target_y
+float64 d_yq
+float64 target_z
+float64 d_z
+float64 target_yaw
+float64 yawd
+float64[] linear_constraints
+
+---
+
+float64[] AK
+float64[] AKe
+float64[] P
+float64 alpha

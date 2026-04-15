@@ -1,0 +1,7 @@
+echo "TELEOP"
+source $HOME/.bashrc
+cd $HOME/drone_ws
+source devel/setup.bash
+sleep 5
+rosrun hector_ui ui_hector_quad.py
+exit

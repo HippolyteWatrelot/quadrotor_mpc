@@ -1,0 +1,7 @@
+echo "BUTTONS"
+source $HOME/.bashrc
+cd $HOME/drone_ws
+source devel/setup.bash
+sleep 5
+bash src/quadrotor_mpc/buttons.sh 
+exit

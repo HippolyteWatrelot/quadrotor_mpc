@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="raw" default="1"/>
+  <arg name="smoothed" default="1"/>
+  
+  <rosparam file="$(find traj_planning_3D)/config/params_node.yaml" />
+
+  <node name="gazebo_obstacles" pkg="traj_planning_3D" type="gazebo_obstacles.py" output="screen"/>
+
+  <include file="$(find traj_planning_3D)/launch/planning_node_server.launch"/>
+  <include file="$(find hector_quadrotor_gazebo)/launch/quadrotor_empty_world.launch"/>
+  
+  <node name="rviz" pkg="rviz" type="rviz" />
+  
+</launch>

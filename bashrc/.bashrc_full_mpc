@@ -1,0 +1,7 @@
+echo "MPC"
+source $HOME/.bashrc
+cd $HOME/drone_ws
+source devel/setup.bash
+roslaunch quadrotor_mpc full_mpc.launch gazebo:=true
+sleep 1000
+exit

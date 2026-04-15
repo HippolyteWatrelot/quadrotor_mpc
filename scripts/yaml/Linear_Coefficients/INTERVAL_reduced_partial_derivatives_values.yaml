@@ -1,0 +1,152 @@
+d2_xq: {d_xq: '0', d_yq: yawd*cos(pitch)*cos(roll), d_z: -yawd*sin(roll)*cos(pitch),
+  pitch: -1.0*d_yq*yawd*sin(pitch)*cos(roll) + 1.0*d_z*yawd*sin(pitch)*sin(roll) +
+    9.8065*cos(pitch), pitchd: -d_xq*sin(pitch)*cos(pitch) - d_yq*sin(pitch)**2*sin(roll)
+    - d_z*sin(pitch)**2*cos(roll) - d_z*cos(pitch), prev_uwx_b: '0', prev_uwy_b: '0',
+  roll: -yawd*(d_yq*sin(roll) + d_z*cos(roll))*cos(pitch), rolld: '0', uwz: '0', ux: '0',
+  uy: '0', uz: '0', yawd: (d_yq*cos(roll) - d_z*sin(roll))*cos(pitch)}
+d2_yq: {d_xq: -yawd*cos(pitch)*cos(roll), d_yq: '0', d_z: -yawd*sin(pitch), pitch: 1.0*d_xq*yawd*sin(pitch)*cos(roll)
+    - 1.0*d_z*yawd*cos(pitch) + 9.8065*sin(pitch)*sin(roll), pitchd: (d_xq*cos(2*pitch)/2
+    + d_xq/2 + d_yq*cos(2*pitch - roll)/4 - d_yq*cos(2*pitch + roll)/4 - d_z*sin(pitch)
+    + d_z*sin(2*pitch - roll)/4 + d_z*sin(2*pitch + roll)/4)*sin(roll), prev_uwx_b: '0',
+  prev_uwy_b: '0', roll: 1.0*(1.0*d_xq*yawd*sin(roll) - 9.8065*cos(roll))*cos(pitch),
+  rolld: d_xq*sin(pitch)*cos(pitch)*cos(roll) - d_yq*sin(roll)*cos(pitch)**2*cos(roll)
+    - d_z*cos(pitch)**2*cos(roll)**2 + d_z*cos(pitch)*cos(roll) + d_z, uwz: '0', ux: '0',
+  uy: '0', uz: '0', yawd: -d_xq*cos(pitch)*cos(roll) - d_z*sin(pitch)}
+d2_z: {d_xq: yawd*sin(roll)*cos(pitch) - 5*sin(pitch), d_yq: (2*yawd*sin(2*pitch)
+    + 10*sin(roll) - 5*sin(2*pitch - roll) + 5*sin(2*pitch + roll))/(4*cos(pitch)),
+  d_z: 5*cos(pitch)*cos(roll) - 5 - 5/(cos(pitch)*cos(roll)), pitch: 1.0*(-0.25*d_xq*yawd*cos(pitch
+    - 2*roll) + 0.25*d_xq*yawd*cos(pitch + 2*roll) - 0.25*d_xq*yawd*cos(3*pitch -
+    2*roll) + 0.25*d_xq*yawd*cos(3*pitch + 2*roll) - 7.5*d_xq*cos(pitch - roll) -
+    7.5*d_xq*cos(pitch + roll) - 2.5*d_xq*cos(3*pitch - roll) - 2.5*d_xq*cos(3*pitch
+    + roll) + 1.5*d_yq*yawd*cos(pitch - roll) + 1.5*d_yq*yawd*cos(pitch + roll) +
+    0.5*d_yq*yawd*cos(3*pitch - roll) + 0.5*d_yq*yawd*cos(3*pitch + roll) - 1.25*d_yq*cos(pitch
+    - 2*roll) + 1.25*d_yq*cos(pitch + 2*roll) - 1.25*d_yq*cos(3*pitch - 2*roll) +
+    1.25*d_yq*cos(3*pitch + 2*roll) - 22.5*d_z*sin(pitch) - 2.5*d_z*sin(3*pitch) -
+    1.25*d_z*sin(pitch - 2*roll) - 1.25*d_z*sin(pitch + 2*roll) - 1.25*d_z*sin(3*pitch
+    - 2*roll) - 1.25*d_z*sin(3*pitch + 2*roll) + 20.0*ux*cos(roll) - 10.0*uy*sin(pitch
+    - roll)*tan(roll) - 10.0*uy*sin(pitch + roll)*tan(roll) - 34.32275*sin(pitch)
+    + 4.90325*sin(3*pitch) + 2.451625*sin(pitch - 2*roll) + 2.451625*sin(pitch + 2*roll)
+    + 2.451625*sin(3*pitch - 2*roll) + 2.451625*sin(3*pitch + 2*roll))/(2*cos(roll)
+    + cos(2*pitch - roll) + cos(2*pitch + roll)), pitchd: (d_xq*cos(2*pitch)/2 + d_xq/2
+    + d_yq*cos(2*pitch - roll)/4 - d_yq*cos(2*pitch + roll)/4 - d_z*sin(pitch) + d_z*sin(2*pitch
+    - roll)/4 + d_z*sin(2*pitch + roll)/4)*cos(roll), prev_uwx_b: '0', prev_uwy_b: '0',
+  roll: 1.0*(1.0*d_xq*yawd*cos(pitch)**2*cos(roll)**3 + 5.0*d_yq*cos(pitch)**2*cos(roll)**3
+    + 8.88178419700125e-16*d_z*sin(pitch)**4*sin(roll) - 1.77635683940025e-15*d_z*sin(roll)**5*cos(pitch)**2
+    + 1.55431223447522e-15*d_z*sin(roll)**5 - 5.0*d_z*sin(roll)*cos(pitch)**2*cos(roll)**2
+    - 5.0*d_z*sin(roll) + 1.77635683940025e-15*uy*sin(roll)**4 + 1.77635683940025e-15*uy*cos(roll)**2
+    - 5.0*uy + 9.8065*sin(roll)*cos(pitch)**2*cos(roll)**2 - 9.8065*sin(roll))/(cos(pitch)*cos(roll)**2),
+  rolld: -d_xq*sin(pitch)*sin(roll)*cos(pitch) - d_yq*cos(pitch)**2*cos(roll)**2 +
+    d_yq*cos(pitch)**2 - d_yq + d_z*sin(roll)*cos(pitch)**2*cos(roll) - d_z*sin(roll)*cos(pitch),
+  uwz: '0', ux: 5*tan(pitch), uy: -5*tan(roll)/cos(pitch), uz: '5', yawd: d_xq*sin(roll)*cos(pitch)
+    + d_yq*sin(pitch)}
+d_prev_uwx_b: {d_xq: 12.7466476316729*cos(2*pitch - roll) - 12.7466476316729*cos(2*pitch
+    + roll), d_yq: 50.9865905266915*sin(pitch)**2*sin(roll)**2 + 50.9865905266915*cos(roll)**2,
+  d_z: 50.9865905266915*(-cos(pitch)*cos(roll) + 1)*sin(roll)*cos(pitch), pitch: (50.9865905266915*d_xq*cos(2*pitch)
+    + 25.4932952633457*d_yq*cos(2*pitch - roll) - 25.4932952633457*d_yq*cos(2*pitch
+    + roll) - 50.9865905266915*d_z*sin(pitch) + 25.4932952633457*d_z*sin(2*pitch -
+    roll) + 25.4932952633457*d_z*sin(2*pitch + roll) - 50.9865905266915*ux*cos(pitch)
+    + 50.9865905266915*uz*sin(pitch) + 100.0*sin(pitch))*sin(roll), pitchd: '0', prev_uwx_b: '-100.000000000000',
+  prev_uwy_b: '0', roll: 50.9865905266915*d_xq*sin(pitch)*cos(pitch)*cos(roll) - 101.973181053383*d_yq*sin(roll)*cos(pitch)**2*cos(roll)
+    - 101.973181053383*d_z*cos(pitch)**2*cos(roll)**2 + 50.9865905266915*d_z*cos(pitch)**2
+    + 50.9865905266915*d_z*cos(pitch)*cos(roll) - 50.9865905266915*ux*sin(pitch)*cos(roll)
+    + 50.9865905266915*uy*sin(roll) - 50.9865905266915*uz*cos(pitch)*cos(roll) - 100.0*cos(pitch)*cos(roll),
+  rolld: '0', uwz: '0', ux: -50.9865905266915*sin(pitch)*sin(roll), uy: -50.9865905266915*cos(roll),
+  uz: -50.9865905266915*sin(roll)*cos(pitch), yawd: '0'}
+d_prev_uwy_b: {d_xq: -50.9865905266915*cos(pitch)**2, d_yq: -12.7466476316729*cos(2*pitch
+    - roll) + 12.7466476316729*cos(2*pitch + roll), d_z: 50.9865905266915*(-cos(pitch)*cos(roll)
+    + 1)*sin(pitch), pitch: 101.973181053383*d_xq*sin(pitch)*cos(pitch) + 101.973181053383*d_yq*sin(pitch)**2*sin(roll)
+    - 50.9865905266915*d_yq*sin(roll) + 101.973181053383*d_z*sin(pitch)**2*cos(roll)
+    + 50.9865905266915*d_z*cos(pitch) - 50.9865905266915*d_z*cos(roll) - 50.9865905266915*ux*sin(pitch)
+    - 50.9865905266915*uz*cos(pitch) - 100.0*cos(pitch), pitchd: '0', prev_uwx_b: '0',
+  prev_uwy_b: '-100.000000000000', roll: 50.9865905266915*(-d_yq*cos(roll) + d_z*sin(roll))*sin(pitch)*cos(pitch),
+  rolld: '0', uwz: '0', ux: 50.9865905266915*cos(pitch), uy: '0', uz: -50.9865905266915*sin(pitch),
+  yawd: '0'}
+pitchd: {d_xq: 0, d_yq: 0, d_z: 0, pitch: 0, pitchd: 1, prev_uwx_b: 0, prev_uwy_b: 0,
+  roll: 0, rolld: 0, uwz: 0, ux: 0, uy: 0, uz: 0, yawd: 0}
+pitchdd: {d_xq: -260.031611686127*cos(pitch)**2*cos(roll), d_yq: -32.5039514607658*cos(2*pitch
+    - 2*roll) + 32.5039514607658*cos(2*pitch + 2*roll), d_z: 260.031611686127*(-cos(pitch)*cos(roll)
+    + 1)*sin(pitch)*cos(roll), pitch: (-I2*yawd*(5*I3*sin(pitch)*cos(roll) + yawd*(I1
+    - I2)*sin(pitch)**2*sin(roll) - yawd*(I1 - I2)*sin(roll)*cos(pitch)**2)*sin(roll)
+    - I3*(I2*(-520.063223372253*d_xq*sin(pitch)*cos(pitch) - 520.063223372253*d_yq*sin(pitch)**2*sin(roll)
+    + 260.031611686127*d_yq*sin(roll) - 520.063223372253*d_z*sin(pitch)**2*cos(roll)
+    - 260.031611686127*d_z*cos(pitch) + 260.031611686127*d_z*cos(roll) + 260.031611686127*ux*sin(pitch)
+    + 260.031611686127*uz*cos(pitch) + 510.0*cos(pitch)) + yawd**2*(I1 - I3)*sin(pitch)**2*cos(roll)
+    - yawd**2*(I1 - I3)*cos(pitch)**2*cos(roll))*cos(roll))/(I2*I3), pitchd: (-I2*(I3*yawd*sin(pitch)*cos(roll)
+    + 5*I3*sin(roll) - yawd*(I1 - I2)*sin(pitch)*cos(roll)) + I3*yawd*(-I1 + I2 +
+    I3)*sin(pitch)*cos(roll))*sin(roll)/(I2*I3), prev_uwx_b: '0', prev_uwy_b: -500.0*cos(roll),
+  roll: (I2*(I1*yawd**2*cos(2*pitch - 2*roll) - I1*yawd**2*cos(2*pitch + 2*roll) -
+    I2*yawd**2*cos(2*pitch - 2*roll) + I2*yawd**2*cos(2*pitch + 2*roll) - 20*I3*uwz*cos(roll)
+    + 10*I3*yawd*cos(pitch - 2*roll) + 10*I3*yawd*cos(pitch + 2*roll)) + I3*(-4*(260.031611686127*I2*(d_yq*cos(roll)
+    - d_z*sin(roll)) + yawd**2*(I1 - I3)*sin(roll))*sin(pitch)*cos(pitch)*cos(roll)
+    + (4*I2*(500.0*prev_uwy_b + (-260.031611686127*d_z + 260.031611686127*uz + 510.0)*sin(pitch)
+    + 260.031611686127*(d_xq*cos(pitch) + d_yq*sin(pitch)*sin(roll) + d_z*sin(pitch)*cos(roll)
+    - ux)*cos(pitch)) - yawd**2*(I1 - I3)*(sin(2*pitch - roll) + sin(2*pitch + roll)))*sin(roll)))/(4*I2*I3),
+  rolld: yawd*(-I2*(I1 - I2 + I3)*sin(roll)**2 - I3*(I1 + I2 - I3)*cos(roll)**2)*cos(pitch)/(I2*I3),
+  uwz: -5*sin(roll), ux: 260.031611686127*cos(pitch)*cos(roll), uy: '0', uz: -260.031611686127*sin(pitch)*cos(roll),
+  yawd: (I2*(5*I3*cos(roll) + 2*yawd*(I1 - I2)*sin(pitch)*sin(roll))*sin(roll) + 2*I3*yawd*(I1
+    - I3)*sin(pitch)*cos(roll)**2)*cos(pitch)/(I2*I3)}
+rolld: {d_xq: 0, d_yq: 0, d_z: 0, pitch: 0, pitchd: 0, prev_uwx_b: 0, prev_uwy_b: 0,
+  roll: 0, rolld: 1, uwz: 0, ux: 0, uy: 0, uz: 0, yawd: 0}
+rolldd: {d_xq: '0', d_yq: 260.031611686127*cos(roll)**2, d_z: 260.031611686127*(-cos(roll)
+    + 1/cos(pitch))*sin(roll), pitch: (-0.25*I1**2*I2*yawd**2*cos(2*pitch - 2*roll)
+    + 0.25*I1**2*I2*yawd**2*cos(2*pitch + 2*roll) - 0.125*I1**2*I2*yawd**2*cos(4*pitch
+    - 2*roll) + 0.125*I1**2*I2*yawd**2*cos(4*pitch + 2*roll) + 0.25*I1**2*I3*yawd**2*cos(2*pitch
+    - 2*roll) - 0.25*I1**2*I3*yawd**2*cos(2*pitch + 2*roll) + 0.125*I1**2*I3*yawd**2*cos(4*pitch
+    - 2*roll) - 0.125*I1**2*I3*yawd**2*cos(4*pitch + 2*roll) + 0.25*I1*I2**2*yawd**2*cos(2*pitch
+    - 2*roll) - 0.25*I1*I2**2*yawd**2*cos(2*pitch + 2*roll) + 0.125*I1*I2**2*yawd**2*cos(4*pitch
+    - 2*roll) - 0.125*I1*I2**2*yawd**2*cos(4*pitch + 2*roll) - 8.66079247272977e-14*I1*I2*I3*d_xq*sin(roll)
+    + 260.031611686127*I1*I2*I3*d_z*cos(pitch - roll) - 260.031611686127*I1*I2*I3*d_z*cos(pitch
+    + roll) - 1000.0*I1*I2*I3*prev_uwy_b*sin(roll) + 10.0*I1*I2*I3*uwz*cos(roll) -
+    260.031611686127*I1*I2*I3*uz*cos(pitch - roll) + 260.031611686127*I1*I2*I3*uz*cos(pitch
+    + roll) - 3.75*I1*I2*I3*yawd*cos(pitch) - 1.25*I1*I2*I3*yawd*cos(3*pitch) - 1.875*I1*I2*I3*yawd*cos(pitch
+    - 2*roll) - 1.875*I1*I2*I3*yawd*cos(pitch + 2*roll) - 0.625*I1*I2*I3*yawd*cos(3*pitch
+    - 2*roll) - 0.625*I1*I2*I3*yawd*cos(3*pitch + 2*roll) - 510.0*I1*I2*I3*cos(pitch
+    - roll) + 510.0*I1*I2*I3*cos(pitch + roll) - 0.25*I1*I3**2*yawd**2*cos(2*pitch
+    - 2*roll) + 0.25*I1*I3**2*yawd**2*cos(2*pitch + 2*roll) - 0.125*I1*I3**2*yawd**2*cos(4*pitch
+    - 2*roll) + 0.125*I1*I3**2*yawd**2*cos(4*pitch + 2*roll) - 0.25*I2**2*I3*yawd**2*cos(2*pitch
+    - 2*roll) + 0.25*I2**2*I3*yawd**2*cos(2*pitch + 2*roll) - 0.125*I2**2*I3*yawd**2*cos(4*pitch
+    - 2*roll) + 0.125*I2**2*I3*yawd**2*cos(4*pitch + 2*roll) + 0.25*I2*I3**2*yawd**2*cos(2*pitch
+    - 2*roll) - 0.25*I2*I3**2*yawd**2*cos(2*pitch + 2*roll) + 0.125*I2*I3**2*yawd**2*cos(4*pitch
+    - 2*roll) - 0.125*I2*I3**2*yawd**2*cos(4*pitch + 2*roll))/(I1*I2*I3*(cos(2*pitch)
+    + 1)), pitchd: (I1*I2*I3*yawd*cos(pitch) + I1*I2*(I3*yawd*sin(pitch)*cos(roll)
+    + 5*I3*sin(roll) - yawd*(I1 - I2)*sin(pitch)*cos(roll))*cos(roll)*tan(pitch) +
+    I1*I3*yawd*(-I1 + I2 + I3)*sin(pitch)*sin(roll)**2*tan(pitch) + I2*I3*yawd*(I2
+    - I3)*cos(pitch)*cos(2*roll))/(I1*I2*I3), prev_uwx_b: '-500.000000000000', prev_uwy_b: -500.0*sin(roll)*tan(pitch),
+  roll: 2.0*I1*yawd**2*sin(pitch)**2*sin(roll)**2/I3 - 1.0*I1*yawd**2*sin(pitch)**2/I3
+    - 2.0*I1*yawd**2*sin(pitch)**2*sin(roll)**2/I2 + 1.0*I1*yawd**2*sin(pitch)**2/I2
+    - 2.0*I2*yawd**2*sin(pitch)**2*sin(roll)**2/I3 + 1.0*I2*yawd**2*sin(pitch)**2/I3
+    - 520.063223372253*d_yq*sin(roll)*cos(roll) + 520.063223372253*d_z*sin(roll)**2
+    - 260.031611686127*d_z + 260.031611686127*d_z*cos(roll)/cos(pitch) - 500.0*prev_uwy_b*cos(roll)*tan(pitch)
+    - 5.0*uwz*sin(roll)*tan(pitch) + 260.031611686127*uy*sin(roll) - 260.031611686127*uz*cos(roll)/cos(pitch)
+    + 10.0*yawd*sin(pitch)*sin(roll)*cos(roll) - 510.0*cos(roll)/cos(pitch) + 2.0*I3*yawd**2*sin(pitch)**2*sin(roll)**2/I2
+    - 1.0*I3*yawd**2*sin(pitch)**2/I2 + 2.0*I2*yawd**2*sin(pitch)**2*sin(roll)**2/I1
+    - 1.0*I2*yawd**2*sin(pitch)**2/I1 - 2.0*I2*yawd**2*sin(roll)**2/I1 + 1.0*I2*yawd**2/I1
+    - 2.0*I3*yawd**2*sin(pitch)**2*sin(roll)**2/I1 + 1.0*I3*yawd**2*sin(pitch)**2/I1
+    + 2.0*I3*yawd**2*sin(roll)**2/I1 - 1.0*I3*yawd**2/I1, rolld: yawd*(I2*(I1 - I2
+    + I3) - I3*(I1 + I2 - I3))*(cos(pitch - 2*roll) - cos(pitch + 2*roll))/(4*I2*I3),
+  uwz: 5*cos(roll)*tan(pitch), ux: '0', uy: -260.031611686127*cos(roll), uz: -260.031611686127*sin(roll)/cos(pitch),
+  yawd: (-I1*I2*(5*I3*cos(roll) + 2*yawd*(I1 - I2)*sin(pitch)*sin(roll))*tan(pitch)
+    + 2*I1*I3*yawd*(I1 - I3)*sin(pitch)*sin(roll)*tan(pitch) + 2*I2*I3*yawd*(I2 -
+    I3)*sin(roll)*cos(pitch))*cos(pitch)*cos(roll)/(I1*I2*I3)}
+yawdd: {d_xq: -260.031611686127*sin(roll)*cos(pitch), d_yq: -260.031611686127*sin(pitch)*sin(roll)**2,
+  d_z: 260.031611686127*(-sin(pitch)*cos(roll) + tan(pitch))*sin(roll), pitch: -1.0*I1*yawd**2*sin(roll)*cos(pitch)*cos(roll)/I3
+    + 1.0*I1*yawd**2*sin(roll)*cos(pitch)*cos(roll)/I2 + 1.0*I2*yawd**2*sin(roll)*cos(pitch)*cos(roll)/I3
+    + 260.031611686127*d_xq*sin(pitch)*sin(roll) + 260.031611686127*d_yq*cos(pitch)*cos(roll)**2
+    - 260.031611686127*d_yq*cos(pitch) - 260.031611686127*d_z*sin(roll)*cos(pitch)*cos(roll)
+    + 260.031611686127*d_z*sin(roll)/cos(pitch)**2 - 500.0*prev_uwy_b*sin(pitch)*sin(roll)/cos(pitch)**2
+    + 5.0*uwz*sin(pitch)*cos(roll)/cos(pitch)**2 - 260.031611686127*uz*sin(roll)/cos(pitch)**2
+    - 510.0*sin(roll)/cos(pitch)**2 - 1.0*I3*yawd**2*sin(roll)*cos(pitch)*cos(roll)/I2,
+  pitchd: (I2*(I3*yawd*sin(pitch)*cos(roll) + 5*I3*sin(roll) - yawd*(I1 - I2)*sin(pitch)*cos(roll))*cos(roll)
+    + I3*yawd*(-I1 + I2 + I3)*sin(pitch)*sin(roll)**2)/(I2*I3*cos(pitch)), prev_uwx_b: '0',
+  prev_uwy_b: -500.0*sin(roll)/cos(pitch), roll: (I2*(-I1*yawd**2*sin(2*pitch - 2*roll)
+    - I1*yawd**2*sin(2*pitch + 2*roll) + I2*yawd**2*sin(2*pitch - 2*roll) + I2*yawd**2*sin(2*pitch
+    + 2*roll) - 20*I3*uwz*sin(roll) - 10*I3*yawd*sin(pitch - 2*roll) + 10*I3*yawd*sin(pitch
+    + 2*roll)) - I3*(4*(260.031611686127*I2*(d_yq*cos(roll) - d_z*sin(roll)) + yawd**2*(I1
+    - I3)*sin(roll))*sin(pitch)*sin(roll)*cos(pitch) + (4*I2*(500.0*prev_uwy_b + (-260.031611686127*d_z
+    + 260.031611686127*uz + 510.0)*sin(pitch) + 260.031611686127*(d_xq*cos(pitch)
+    + d_yq*sin(pitch)*sin(roll) + d_z*sin(pitch)*cos(roll) - ux)*cos(pitch)) - yawd**2*(I1
+    - I3)*(sin(2*pitch - roll) + sin(2*pitch + roll)))*cos(roll)))/(4*I2*I3*cos(pitch)),
+  rolld: yawd*(I2*(I1 - I2 + I3) - I3*(I1 + I2 - I3))*sin(2*roll)/(2*I2*I3), uwz: 5*cos(roll)/cos(pitch),
+  ux: 260.031611686127*sin(roll), uy: '0', uz: -260.031611686127*sin(roll)*tan(pitch),
+  yawd: (-I2*(5*I3*cos(roll) + 2*yawd*(I1 - I2)*sin(pitch)*sin(roll)) + 2*I3*yawd*(I1
+    - I3)*sin(pitch)*sin(roll))*cos(roll)/(I2*I3)}

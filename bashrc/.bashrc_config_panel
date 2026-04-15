@@ -1,0 +1,7 @@
+echo "CONFIG PANEL"
+source $HOME/.bashrc
+cd $HOME/drone_ws
+source devel/setup.bash
+sleep 5
+bash src/quadrotor_mpc/config_panel.sh.sh 
+exit

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <rosparam file="$(find hector_quadrotor_controller)/params/controller.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/yaml/config.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/yaml/mat_utils.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/config/MPC_parameters.yaml" />
+    <node name="MPC_test_node" pkg="quadrotor_mpc" type="MPC_test.py" output="screen">
+    </node>
+
+</launch>

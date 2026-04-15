@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="gazebo" default="false"/>
+    <arg name="control_panel" default="true"/>
+    <arg name="acados" default="false"/>
+    <arg name="robust_mode" default="false"/>
+    <!-- <include file="$(find quadrotor_mpc)/launch/traj_and_obstacles.launch" if="$(arg gazebo)" /> -->
+    <include file="$(find hector_quadrotor_gazebo)/launch/quadrotor_empty_world.launch" if="$(arg gazebo)"/>
+
+    <rosparam file="$(find hector_quadrotor_controller)/params/controller.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/yaml/config.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/yaml/mat_utils.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/config/MPC_parameters.yaml" />
+    <!-- <node name="full_acados_mpc_node" pkg="quadrotor_mpc" type="full_acados_mpc_node" output="screen" if="$(arg acados)"/> -->
+    <node name="full_mpc_node" pkg="quadrotor_mpc" type="full_mpc_node" output="screen"/>    <!--unless="$(arg acados)"/> -->
+    <node name="command_panel" pkg="hector_ui" type="ui_hector_quad.py" if="$(arg control_panel)"/>
+    <node name="tube_validation_node" pkg="quadrotor_mpc" type="tube_validation_node.py" if="$(robust_mode)"/>
+
+</launch>

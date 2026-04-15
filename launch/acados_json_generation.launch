@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="c_model" default="0" />
+    <arg name="qp_solver" default="1" />
+    <arg name="linear" default="true" />
+    <rosparam file="$(find hector_quadrotor_controller)/params/controller.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/yaml/config.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/yaml/mat_utils.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/config/MPC_parameters.yaml" />
+    <node name="linear_json_model_node" pkg="quadrotor_mpc" type="generate_linear_ocp.py" output="screen" args="$(arg c_model) $(arg qp_solver)" cwd="node" if="$(arg linear)"/>
+    <node name="full_json_model_node" pkg="quadrotor_mpc" type="generate_full_ocp.py" output="screen" args="$(arg c_model) $(arg qp_solver)" cwd="node" unless="$(arg linear)"/>
+
+</launch>

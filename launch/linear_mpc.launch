@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="gazebo" default="false"/>
+    <arg name="acados" default="false"/>
+    <include file="$(find quadrotor_mpc)/launch/traj_and_obstacles.launch" if="$(arg gazebo)" />
+
+    <rosparam file="$(find hector_quadrotor_controller)/params/controller.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/yaml/config.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/yaml/mat_utils.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/config/MPC_parameters.yaml" />
+    <node name="linear_acados_mpc_node" pkg="quadrotor_mpc" type="linear_acados_mpc_node" output="screen" if="$(arg acados)"/>
+    <node name="linear_mpc_node" pkg="quadrotor_mpc" type="linear_mpc_node" output="screen" unless="$(arg acados)"/>
+
+</launch>

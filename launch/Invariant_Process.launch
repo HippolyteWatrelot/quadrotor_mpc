@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <rosparam file="$(find hector_quadrotor_controller)/params/controller.yaml" />
+    <rosparam file="$(find quadrotor_mpc)/scripts/Invariant_Design/config/LJ_parameters.yaml" />
+    <node name="Invariant_node" pkg="quadrotor_mpc" type="Classic_LJ_node.py" output="screen">
+    </node>
+
+</launch>

@@ -1,0 +1,10 @@
+float64[] targets
+float64[] vars
+float64[] F
+float64[] G
+
+---
+
+float64[] AK
+float64[] P
+float64 alpha

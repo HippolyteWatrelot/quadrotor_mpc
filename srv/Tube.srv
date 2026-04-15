@@ -1,0 +1,16 @@
+int16 N
+float64[] x
+float64[] w0
+float64[] u_nom0
+float64[] pred_states
+float64[] pred_inputs
+float64[] current_e
+float64[] Q_list
+float64[] R_list
+float64[] constraints_boxes
+
+---
+
+float64[] u0
+float64[] new_e
+int16 n_validation 

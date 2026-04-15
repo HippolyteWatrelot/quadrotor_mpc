@@ -1,0 +1,8 @@
+echo "PANEL"
+source $HOME/.bashrc
+cd $HOME/drone_ws
+source devel/setup.bash
+sleep 5
+rosrun quadrotor_mpc wind_setup.py
+sleep 1000
+exit

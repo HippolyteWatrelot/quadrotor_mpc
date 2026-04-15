@@ -1,0 +1,6 @@
+echo "DRONE EMPTY WORLD"
+source $HOME/.bashrc
+cd $HOME/drone_ws
+source devel/setup.bash
+roslaunch quadrotor_mpc traj_and_obstacles.launch
+exit

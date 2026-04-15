@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="raw" default="1"/>
+  <arg name="smoothed" default="1"/>
+
+  <include file="$(find hector_quadrotor_gazebo)/launch/quadrotor_empty_world.launch"/>
+  
+  <node name="rviz" pkg="rviz" type="rviz" />
+  
+</launch>

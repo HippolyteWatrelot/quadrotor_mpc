@@ -1,0 +1,8 @@
+echo "RESULTS"
+source $HOME/.bashrc
+cd $HOME/drone_ws
+source devel/setup.bash
+sleep 10
+rosrun quadrotor_mpc results.py
+sleep 1000
+exit
